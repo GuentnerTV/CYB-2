@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>Hallo</title>
+        <meta charset="utf8"/>
+        <script>
+            function sayHello(){
+
+            //alert("Hi, world");
+                document.getElementById("hdr1").innerText = "Hello, Text";
+                document.getElementById("hdr1").style.color="red";
+            
+            }
+
+            function sayMeow(){
+
+                document.getElementById("hdr1").innerText = "Meow1";
+                document.getElementById("hdr1").style.color="yellow";
+            }
+            
+            function sayMeow2(){
+
+                document.getElementById("hdr1").innerText = "Meow2";
+                document.getElementById("hdr1").style.color="black";
+        
+            }
+            
+           
+
+           function AudioMeow(){
+            var x = document.getElementById("mySound");
+              // alert("aalas");
+               x.play();
+
+           }
+          
+            
+
+
+        </script>
+    </head>
+
+
+    <body>
+            <h1 id="hdr1">Demo</h1>
+            <h2>Разное</h2>
+            <p>asdds</p>
+            <p>Аasass</p>
+            <p>bbrbr</p>
+            <p>fdfb</p>
+            <a href="http://ya.ru">Shmandeks</a><br/>
+           
+            <img src="images/12712977.jpg"  style="width: 200px;" onclick="sayMeow()"  onmouseover="AudioMeow();" />
+            <br />
+            <button onclick="sayHello();">Click</button>
+          
+           <audio id="mySound">
+            <source src="music/track.mp3" type="audio/mpeg">
+            </audio>
+               
+            
+
+    </body>   
+</html>
