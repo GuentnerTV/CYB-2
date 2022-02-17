@@ -34,7 +34,7 @@
         //mysqli_stmt_bind_param($statement, "ss", $user, $hash);
         //$cursor = mysqli_stmt_get_result($statement);
         //$result= mysqli_fetch_all($cursor);
-
+        // тест гит 
 
             mysqli_close($conn);
             //var_dump($result);
