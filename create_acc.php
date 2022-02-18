@@ -14,11 +14,11 @@
             
             $pwd = $_REQUEST['pwd'];
             $hash = hash("sha256", $pwd);
-           
+           echo $hash;
             include("../../params//billing.php");
 
             $conn = mysqli_connect($db_server,$db_user,$db_pwd,"billing");
-            $sql = "INSERT INTO users(Login, Pwdhash, Adress) VALUES($user,$pwd,$Adress_var)";
+            $sql = "INSERT INTO users(Login, Pwdhash, Adress) VALUES($user,$hash,$Adress_var)";
             //echo $sql;
 
             mysqli_query($conn, $sql);
