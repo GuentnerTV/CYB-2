@@ -15,7 +15,7 @@
     password<br />   
     <input type="password" name="pwd"/><br />
      adress<br />
-    <input name="Adress_var"/><br />
+    <input name="Address"/><br />
     <button>Done!</button>
 
 

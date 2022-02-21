@@ -11,40 +11,28 @@
     <a href="index.html">Index</a>
         <?php
             $user = $_REQUEST['user'];
-            
+            $Address = $_REQUEST['Address'];
             $pwd = $_REQUEST['pwd'];
             $hash = hash("sha256", $pwd);
-           echo $hash;
+           //echo $hash;
             include("../../params//billing.php");
 
             $conn = mysqli_connect($db_server,$db_user,$db_pwd,"billing");
-            $sql = "INSERT INTO users(Login, Pwdhash, Adress) VALUES($user,$hash,$Adress_var)";
-            //echo $sql;
+            $sql = "INSERT INTO users(Login, Pwdhash, Address) VALUES('$user', '$hash', '$Address')";
+           // echo $sql;
 
-            mysqli_query($conn, $sql);
+          mysqli_query($conn, $sql);
 
+         //$statement = mysqli_prepare($conn,$sql);
+         //mysqli_stmt_bind_param($statement, "ss", $user, $hash);
+          //mysqli_stmt_execute($statement);
+          //$cursor = mysqli_stmt_get_result($statement);
+          //$result= mysqli_fetch_all($cursor);
             
             
-           /* $sql = "SELECT * FROM users WHERE login = '$user' AND Pwdhash='$hash'  " ;
-
-            $query = mysqli_query($conn,$sql);
-            $result = mysqli_fetch_all($query);
-            использование параметрического запроса защищает нас от sql injection */ 
-
-
-
-
-              /*  $sql = "SELECT * FROM users WHERE login=? AND Pwdhash=?" ;
-                $statement = mysqli_prepare($conn,$sql);
-                mysqli_stmt_bind_param($statement, "ss", $user, $hash);
-                mysqli_stmt_execute($statement);
-                $cursor = mysqli_stmt_get_result($statement);
-                $result= mysqli_fetch_all($cursor); */
-        
-
             mysqli_close($conn);
-            //var_dump($result);
-            if (count($result) == 0)
+
+            if (count($mysqli_result) == 0)
                 echo ("Operation fault");
 
             else {
